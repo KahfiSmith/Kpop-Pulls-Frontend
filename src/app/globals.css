@@ -21,6 +21,16 @@
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  --color-retro-brown: var(--retro-brown);
+  --color-retro-cream: var(--retro-cream);
+  --color-retro-yellow: var(--retro-yellow);
+  --color-retro-coral: var(--retro-coral);
+  --color-retro-sage: var(--retro-sage);
+  --color-retro-teal: var(--retro-teal);
+  --color-retro-navy: var(--retro-navy);
+  --color-retro-burgundy: var(--retro-burgundy);
+  --color-retro-orange: var(--retro-orange);
+  --color-retro-mint: var(--retro-mint);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -68,6 +78,16 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
+  --retro-brown: #472a0e;
+  --retro-cream: #fff4de;
+  --retro-yellow: #fdd26f;
+  --retro-coral: #fb8778;
+  --retro-sage: #94a984;
+  --retro-teal: #5a9e94;
+  --retro-navy: #2d4654;
+  --retro-burgundy: #a33b39;
+  --retro-orange: #e67e22;
+  --retro-mint: #c2e8ce;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -102,6 +122,16 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
+  --retro-brown: #472a0e;
+  --retro-cream: #fff4de;
+  --retro-yellow: #fdd26f;
+  --retro-coral: #fb8778;
+  --retro-sage: #94a984;
+  --retro-teal: #5a9e94;
+  --retro-navy: #2d4654;
+  --retro-burgundy: #a33b39;
+  --retro-orange: #e67e22;
+  --retro-mint: #c2e8ce;
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -119,4 +149,22 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #C4C4C4;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #999999;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
