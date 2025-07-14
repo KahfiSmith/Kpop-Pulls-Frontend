@@ -3,13 +3,18 @@
 import { GachaPull } from "@/components/features";
 import { Button } from "@/components/ui";
 import Link from "next/link";
+import dynamic from 'next/dynamic';
+
+const ClientOnlyGachaPull = dynamic(() => Promise.resolve(GachaPull), { 
+  ssr: false 
+});
 
 export default function Home() {
 
   return (
     <div className="grid grid-rows-[auto_1fr_auto] min-h-screen bg-retro-cream p-8 font-[family-name:var(--font-geist-sans)]">
       <header className="py-6 text-center">
-        <h1 className="text-3xl font-bold text-retro-brown mb-2">KPop Idol Gacha</h1>
+        <h1 className="text-3xl font-medium text-retro-brown mb-2 font-bungee">KPop Idol Gacha</h1>
         <p className="text-retro-navy">Collect your favorite KPop idols!</p>
         
         <div className="mt-4 flex justify-center space-x-4">
@@ -30,7 +35,7 @@ export default function Home() {
       <main className="flex flex-col items-center py-8">
         {/* Gacha Pull Section */}
         <section className="w-full">
-          <GachaPull />
+          <ClientOnlyGachaPull />
         </section>
       </main>
       
