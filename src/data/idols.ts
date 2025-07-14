@@ -1,4 +1,4 @@
-import { RarityType } from './rarities';
+import { RarityType } from '@/data/rarities';
 
 export interface Idol {
   id: string;
@@ -117,7 +117,7 @@ export const idols: Idol[] = [
     group: 'TWICE',
     birthdate: 'June 14, 1999',
     birthplace: 'Tainan, Taiwan',
-    position: 'Lead Dancer, Vocalist, Visual, Maknae',
+    position: 'Lead Dancer, Vocalist, Visual',
     quote: 'Cheese kimbap!',
     rarity: 'legendary',
     image: '/images/tzuyu.jpeg'
@@ -165,7 +165,7 @@ export const idols: Idol[] = [
     group: 'BLACKPINK',
     birthdate: 'March 27, 1997',
     birthplace: 'Buriram, Thailand',
-    position: 'Main Dancer, Lead Rapper, Sub-Vocalist, Maknae',
+    position: 'Main Dancer, Lead Rapper, Maknae',
     quote: 'Lalisa love me!',
     rarity: 'legendary',
     image: '/images/lisa.jpeg'
@@ -177,7 +177,7 @@ export const idols: Idol[] = [
     group: 'Red Velvet',
     birthdate: 'March 29, 1991',
     birthplace: 'Daegu, South Korea',
-    position: 'Leader, Main Rapper, Lead Dancer, Sub-Vocalist, Visual',
+    position: 'Leader, Lead Dancer, Visual',
     quote: 'Baerene!',
     rarity: 'epic',
     image: '/images/irene.jpeg'
@@ -237,7 +237,7 @@ export const idols: Idol[] = [
     group: 'aespa',
     birthdate: 'April 11, 2000',
     birthplace: 'Bucheon, South Korea',
-    position: 'Leader, Main Dancer, Lead Vocalist, Lead Rapper, Visual',
+    position: 'Leader, Main Dancer, Visual',
     quote: 'I\'m Karina, æ-Karina!',
     rarity: 'legendary',
     image: '/images/karina.jpeg'
@@ -285,7 +285,7 @@ export const idols: Idol[] = [
     group: 'ITZY',
     birthdate: 'May 26, 2000',
     birthplace: 'Jeonju, South Korea',
-    position: 'Leader, Main Dancer, Lead Vocalist, Lead Rapper',
+    position: 'Leader, Main Dancer, Lead Vocalist',
     quote: 'In my area!',
     rarity: 'legendary',
     image: '/images/yeji.jpeg'
@@ -309,7 +309,7 @@ export const idols: Idol[] = [
     group: 'ITZY',
     birthdate: 'April 17, 2001',
     birthplace: 'Seoul, South Korea',
-    position: 'Main Rapper, Lead Dancer, Sub-Vocalist, Center',
+    position: 'Main Rapper, Lead Dancer, Center',
     quote: 'Not shy, not me!',
     rarity: 'epic',
     image: '/images/ryujin.jpeg'
@@ -333,7 +333,7 @@ export const idols: Idol[] = [
     group: 'ITZY',
     birthdate: 'December 9, 2003',
     birthplace: 'Suwon, South Korea',
-    position: 'Lead Rapper, Lead Dancer, Sub-Vocalist, Visual, Maknae',
+    position: 'Lead Rapper, Lead Dancer, Visual',
     quote: 'Hey, hey, hey, hey!',
     rarity: 'rare',
     image: '/images/yuna.jpeg'
@@ -381,7 +381,7 @@ export const idols: Idol[] = [
     group: 'IVE',
     birthdate: 'August 31, 2004',
     birthplace: 'Seoul, South Korea',
-    position: 'Lead Dancer, Sub-Vocalist, Visual, Center',
+    position: 'Lead Dancer, Sub-Vocalist, Visual',
     quote: 'Kitsch!',
     rarity: 'legendary',
     image: '/images/wonyoung.jpeg'
@@ -417,7 +417,7 @@ export const idols: Idol[] = [
     group: 'NewJeans',
     birthdate: 'May 7, 2004',
     birthplace: 'Chuncheon, South Korea',
-    position: 'Leader, Lead Vocalist, Lead Dancer, Visual',
+    position: 'Leader, Lead Dancer, Visual',
     quote: 'Attention!',
     rarity: 'epic',
     image: '/images/minji.jpeg'
