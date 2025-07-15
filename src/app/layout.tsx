@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Bungee } from 'next/font/google';
-import "./globals.css";
+import "@/app/globals.css";
 
 const bungee = Bungee({
   weight: '400',
