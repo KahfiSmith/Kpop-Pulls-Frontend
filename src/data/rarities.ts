@@ -65,8 +65,8 @@ export const rarities: Record<RarityType, Rarity> = {
 };
 
 export const pityConfig = {
-  rare: 5, // Guaranteed Rising Star after 5 pulls without Rising Star or higher
-  epic: 20, // Guaranteed Superstar after 20 pulls without Superstar or higher
-  legendary: 50, // Guaranteed Idol Queen after 50 pulls without Idol Queen or higher
-  mythical: 100 // Guaranteed Ultimate Bias after 100 pulls without Ultimate Bias
+  rare: 5,
+  epic: 20, 
+  legendary: 50, 
+  mythical: 100 
 };

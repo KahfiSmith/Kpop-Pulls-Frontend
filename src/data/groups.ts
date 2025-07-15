@@ -30,7 +30,7 @@ export const groups: Group[] = [
   },
   {
     id: 'aespa',
-    name: 'aespa',
+    name: 'Aespa',
     debutYear: 2020,
     company: 'SM Entertainment',
     members: 4
