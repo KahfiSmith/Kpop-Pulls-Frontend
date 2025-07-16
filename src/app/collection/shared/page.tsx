@@ -16,9 +16,9 @@ import { rarities, RarityType } from "@/data/rarities";
 import { CollectionFilters, CollectionShareData } from "@/types";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
-export default function SharedCollectionPage() {
+function SharedCollectionContent() {
   const searchParams = useSearchParams();
   const [sharedData, setSharedData] = useState<CollectionShareData | null>(
     null
@@ -322,5 +322,17 @@ export default function SharedCollectionPage() {
         onClose={closeModal}
       />
     </div>
+  );
+}
+
+export default function SharedCollectionPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-retro-brown"></div>
+      </div>
+    }>
+      <SharedCollectionContent />
+    </Suspense>
   );
 }
