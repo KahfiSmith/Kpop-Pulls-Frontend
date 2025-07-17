@@ -11,6 +11,7 @@ const bungee = Bungee({
 export const metadata: Metadata = {
   title: "KPopPulls - Collect Your Favorite K-Pop Idols",
   description: "Pull and collect your favorite K-Pop idols in this gacha game",
+  metadataBase: new URL('https://kpoppulls.vercel.app'),
 };
 
 export default function RootLayout({
@@ -20,6 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          href="/images/gacha-machine.png"
+          as="image"
+          type="image/png"
+        />
+      </head>
       <body
         className={`${bungee.variable} antialiased`}
       >

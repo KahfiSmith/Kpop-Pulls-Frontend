@@ -83,6 +83,7 @@ export const GachaPull: React.FC = () => {
                             width={300}
                             height={300}
                             className="rounded-lg border-4 border-retro-brown shadow-lg h-full w-full object-cover"
+                            priority
                           />
                           <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-2 rounded-b-lg">
                             <p className="text-white text-center font-bold">
@@ -127,6 +128,7 @@ export const GachaPull: React.FC = () => {
                 width={170}
                 height={170}
                 className="mb-6"
+                priority
               />
               <p className="text-retro-cream text-lg mb-6">
                 Pull an idol card!
