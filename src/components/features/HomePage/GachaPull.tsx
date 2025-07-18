@@ -12,6 +12,7 @@ import { useGacha, useSoundEffects } from "@/hooks";
 import { rarities, pityConfig } from "@/data/rarities";
 import { IdolCard } from "./IdolCard";
 import Image from "next/image";
+import { OptimizedImage } from "@/components/common/OptimizedImage";
 
 export const GachaPull: React.FC = () => {
   const {
@@ -77,13 +78,13 @@ export const GachaPull: React.FC = () => {
                     <div className="transform scale-110 animate-scaleIn">
                       {animation.result.idol.image && (
                         <div className="relative">
-                          <Image
+                          <OptimizedImage
                             src={animation.result.idol.image}
                             alt={animation.result.idol.name}
                             width={300}
                             height={300}
                             className="rounded-lg border-4 border-retro-brown shadow-lg h-full w-full object-cover"
-                            priority
+                            sizes="(max-width: 768px) 100vw, 300px"
                           />
                           <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-2 rounded-b-lg">
                             <p className="text-white text-center font-bold">
@@ -122,13 +123,13 @@ export const GachaPull: React.FC = () => {
             </div>
           ) : (
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <Image
+              <OptimizedImage
                 src="/images/gacha-machine.png"
                 alt="Gacha Machine"
                 width={170}
                 height={170}
                 className="mb-6"
-                priority
+                sizes="170px"
               />
               <p className="text-retro-cream text-lg mb-6">
                 Pull an idol card!

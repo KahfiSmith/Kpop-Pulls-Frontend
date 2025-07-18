@@ -1,7 +1,7 @@
+import { OptimizedImage } from '@/components/common/OptimizedImage';
 import { Button } from '@/components/ui';
 import { Idol } from '@/data/idols';
 import { rarities } from '@/data/rarities';
-import Image from 'next/image';
 import React, { useEffect } from 'react';
 
 interface IdolDetailModalProps {
@@ -53,12 +53,12 @@ export const IdolDetailModal: React.FC<IdolDetailModalProps> = ({ idol, onClose,
         <div className="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative h-96 w-full rounded-lg overflow-hidden border-3 border-retro-brown">
-              <Image
+              <OptimizedImage
                 src={idol.image}
                 alt={`${idol.name} from ${idol.group}`}
                 fill
                 className="object-cover"
-                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
 

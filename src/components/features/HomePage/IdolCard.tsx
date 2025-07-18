@@ -1,7 +1,7 @@
+import { OptimizedImage } from "@/components/common/OptimizedImage";
 import { Button } from "@/components/ui";
 import { rarities, RarityType } from "@/data/rarities";
 import { IdolCardProps } from "@/types";
-import Image from "next/image";
 import React from "react";
 
 export const IdolCard: React.FC<IdolCardProps> = ({
@@ -47,14 +47,12 @@ export const IdolCard: React.FC<IdolCardProps> = ({
 
         <div className="relative h-64 w-full">
           {imageSrc ? (
-            <Image
+            <OptimizedImage
               src={imageSrc}
               alt={`${name} from ${group}`}
               fill
               className="object-cover max-w-[288px] max-h-[256px]"
-              priority
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFdwI2QOQviwAAAABJRU5ErkJggg=="
+              sizes="(max-width: 768px) 100vw, 288px"
             />
           ) : (
             <div className="bg-retro-sage h-64 flex items-center justify-center">
