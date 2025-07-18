@@ -83,7 +83,7 @@ export const GachaPull: React.FC = () => {
                             alt={animation.result.idol.name}
                             width={300}
                             height={300}
-                            className="rounded-lg border-4 border-retro-brown shadow-lg h-full w-full object-cover"
+                            className="rounded-lg border-2 border-retro-brown shadow-lg h-full w-full object-cover"
                             sizes="(max-width: 768px) 100vw, 300px"
                           />
                           <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-2 rounded-b-lg">
@@ -123,13 +123,13 @@ export const GachaPull: React.FC = () => {
             </div>
           ) : (
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <OptimizedImage
+              <img
                 src="/images/gacha-machine.png"
                 alt="Gacha Machine"
                 width={170}
                 height={170}
                 className="mb-6"
-                sizes="170px"
+                style={{ imageRendering: 'crisp-edges' }}
               />
               <p className="text-retro-cream text-lg mb-6">
                 Pull an idol card!
