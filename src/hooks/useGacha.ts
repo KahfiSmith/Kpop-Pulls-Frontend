@@ -191,15 +191,18 @@ export function useGacha() {
       step: 'pulling'
     });
     
+    // Pulling animation - 1.5 seconds
     setTimeout(() => {
+      // Show the idol card (reveal step)
       setAnimation(prev => ({ ...prev, step: 'reveal' }));
       
+      // After showing the card for a while, transition to completion message
       setTimeout(() => {
+        // Complete step - show congratulations message without the card
         setAnimation(prev => ({ ...prev, step: 'complete' }));
         
-        // Remove the automatic transition to initial state
-        // The user must click "Continue" to go back to initial state
-      }, 1500);
+        // User must click "Continue" to go back to initial state
+      }, 2500); // Show the card for 2.5 seconds before showing congratulations
     }, 1500);
     
     return pullResult;

@@ -112,12 +112,24 @@
     100% { background-position: 1000px 0 }
   };
   
+  --keyframes-slideUp: {
+    0% { transform: translateY(30px); opacity: 0 }
+    100% { transform: translateY(0); opacity: 1 }
+  };
+  
+  --keyframes-fadeOut: {
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+  };
+  
   --animation-accordion-down: accordion-down 0.2s ease-out;
   --animation-accordion-up: accordion-up 0.2s ease-out;
   --animation-fadeIn: fadeIn 0.5s ease-out forwards;
   --animation-scaleIn: scaleIn 0.5s ease-out forwards;
   --animation-float: float 3s ease-in-out infinite;
   --animation-shimmer: shimmer 2s infinite linear;
+  --animation-slideUp: slideUp 0.7s ease-out forwards;
+  --animation-fadeOut: fadeOut 0.5s ease-out forwards;
 }
 
 :root {
@@ -244,6 +256,14 @@
     animation: var(--animation-shimmer);
   }
   
+  .animate-slideUp {
+    animation: var(--animation-slideUp);
+  }
+  
+  .animate-fadeOut {
+    animation: var(--animation-fadeOut);
+  }
+  
   .container {
     width: 100%;
     margin-left: auto;
@@ -287,6 +307,16 @@
 @keyframes shimmer {
   0% { background-position: -1000px 0 }
   100% { background-position: 1000px 0 }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(30px); opacity: 0 }
+  100% { transform: translateY(0); opacity: 1 }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
 }
 
 *::-webkit-scrollbar {

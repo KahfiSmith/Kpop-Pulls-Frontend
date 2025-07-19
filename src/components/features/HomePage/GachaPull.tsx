@@ -94,22 +94,34 @@ export const GachaPull: React.FC = () => {
               )}
 
               {animation.step === "complete" && animation.result && (
-                <div className="flex flex-col items-center">
-                  <p className="text-retro-cream text-xl font-bold mb-2">
-                    {animation.result.pityPull
-                      ? "Pity activated!"
-                      : "Congratulations!"}
-                  </p>
-                  <p className="text-retro-yellow text-lg mb-4">
-                    You pulled a {rarities[animation.result.idol.rarity].name}{" "}
-                    card!
-                  </p>
-                  <Button
-                    onClick={() => skipAnimation()}
-                    className="bg-retro-yellow hover:bg-retro-orange text-retro-brown font-medium py-1.5 px-3 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(71,42,14,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(71,42,14,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm"
-                  >
-                    Continue
-                  </Button>
+                <div className="flex flex-col items-center animate-fadeIn transition-all duration-500">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div
+                      className={`absolute inset-0 ${
+                        rarities[animation.result.idol.rarity].bgColor
+                      } opacity-30`}
+                    ></div>
+                  </div>
+                  
+                  <div className="absolute inset-0 flex flex-col items-center justify-center animate-slideUp">
+                    <div className="text-center">
+                      <p className="text-retro-cream text-2xl font-bold mb-3 bg-retro-brown/80 px-6 py-2 rounded-lg shadow-lg">
+                        {animation.result.pityPull
+                          ? "Pity activated!"
+                          : "Congratulations!"}
+                      </p>
+                      <p className="text-retro-yellow text-xl mb-6 bg-retro-brown/80 px-6 py-2 rounded-lg shadow-lg">
+                        You pulled a {rarities[animation.result.idol.rarity].name}{" "}
+                        card!
+                      </p>
+                      <Button
+                        onClick={() => skipAnimation()}
+                        className="bg-retro-yellow hover:bg-retro-orange text-retro-brown font-medium py-2 px-6 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(71,42,14,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(71,42,14,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px]"
+                      >
+                        Continue
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
