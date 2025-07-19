@@ -108,7 +108,7 @@ export const GachaPull: React.FC = () => {
                           ? "Pity activated!"
                           : "Congratulations!"}
                       </p>
-                      <p className="text-retro-yellow text-xl mb-6 bg-retro-brown/80 px-6 py-2 rounded-lg shadow-lg">
+                      <p className="text-retro-yellow text-lg mb-4">
                         You pulled a{" "}
                         {rarities[animation.result.idol.rarity].name} card!
                       </p>

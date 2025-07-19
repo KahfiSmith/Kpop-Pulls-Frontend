@@ -27,7 +27,6 @@ export const IdolDetailModal: React.FC<IdolDetailModalProps> = ({ idol, onClose,
     };
   }, [isOpen, onClose]);
 
-  // Close modal when clicking outside
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
