@@ -1,18 +1,16 @@
-import { useState, useEffect } from "react";
+import { OptimizedImage } from "@/components/common/OptimizedImage";
 import {
   Button,
   Table,
-  TableHeader,
   TableBody,
-  TableHead,
-  TableRow,
   TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
 } from "@/components/ui";
+import { pityConfig, rarities } from "@/data/rarities";
 import { useGacha, useSoundEffects } from "@/hooks";
-import { rarities, pityConfig } from "@/data/rarities";
-import { IdolCard } from "./IdolCard";
-import Image from "next/image";
-import { OptimizedImage } from "@/components/common/OptimizedImage";
+import { useEffect, useState } from "react";
 
 export const GachaPull: React.FC = () => {
   const {
@@ -102,17 +100,17 @@ export const GachaPull: React.FC = () => {
                       } opacity-30`}
                     ></div>
                   </div>
-                  
+
                   <div className="absolute inset-0 flex flex-col items-center justify-center animate-slideUp">
                     <div className="text-center">
-                      <p className="text-retro-cream text-2xl font-bold mb-3 bg-retro-brown/80 px-6 py-2 rounded-lg shadow-lg">
+                      <p className="text-retro-cream text-xl font-bold mb-2">
                         {animation.result.pityPull
                           ? "Pity activated!"
                           : "Congratulations!"}
                       </p>
                       <p className="text-retro-yellow text-xl mb-6 bg-retro-brown/80 px-6 py-2 rounded-lg shadow-lg">
-                        You pulled a {rarities[animation.result.idol.rarity].name}{" "}
-                        card!
+                        You pulled a{" "}
+                        {rarities[animation.result.idol.rarity].name} card!
                       </p>
                       <Button
                         onClick={() => skipAnimation()}
@@ -133,7 +131,7 @@ export const GachaPull: React.FC = () => {
                 width={170}
                 height={170}
                 className="mb-6"
-                style={{ imageRendering: 'crisp-edges' }}
+                style={{ imageRendering: "crisp-edges" }}
               />
               <p className="text-retro-cream text-lg mb-6">
                 Pull an idol card!
@@ -183,9 +181,7 @@ export const GachaPull: React.FC = () => {
                 {pityCounter.legendary}/{pityConfig.legendary}
               </div>
               <div className="bg-pink-100 px-2 py-1 rounded border border-pink-400 text-pink-700">
-                <span className="font-medium">
-                  Ultimate Bias:
-                </span>{" "}
+                <span className="font-medium">Ultimate Bias:</span>{" "}
                 {pityCounter.mythical}/{pityConfig.mythical}
               </div>
             </div>
