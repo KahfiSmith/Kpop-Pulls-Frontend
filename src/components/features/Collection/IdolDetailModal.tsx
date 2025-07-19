@@ -52,13 +52,14 @@ export const IdolDetailModal: React.FC<IdolDetailModalProps> = ({ idol, onClose,
         <div className="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative h-96 w-full rounded-lg overflow-hidden border-3 border-retro-brown">
-              <OptimizedImage
-                src={idol.image}
-                alt={`${idol.name} from ${idol.group}`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              <div className="w-full h-full">
+                <OptimizedImage
+                  src={idol.image}
+                  alt={`${idol.name} from ${idol.group}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </div>
 
             <div className="bg-white p-4 rounded-lg border-3 border-retro-brown">

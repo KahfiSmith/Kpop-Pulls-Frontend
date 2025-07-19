@@ -47,13 +47,14 @@ export const IdolCard: React.FC<IdolCardProps> = ({
 
         <div className="relative h-64 w-full">
           {imageSrc ? (
-            <OptimizedImage
-              src={imageSrc}
-              alt={`${name} from ${group}`}
-              fill
-              className="object-cover max-w-[288px] max-h-[256px]"
-              sizes="(max-width: 768px) 100vw, 288px"
-            />
+            <div className="w-full h-full">
+              <OptimizedImage
+                src={imageSrc}
+                alt={`${name} from ${group}`}
+                fill
+                sizes="(max-width: 768px) 100vw, 288px"
+              />
+            </div>
           ) : (
             <div className="bg-retro-sage h-64 flex items-center justify-center">
               <p className="text-retro-brown text-sm">Image not available</p>

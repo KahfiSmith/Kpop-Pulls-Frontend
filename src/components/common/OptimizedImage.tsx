@@ -16,14 +16,14 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [hasError, setHasError] = useState(false);
   
   return (
-    <div className={`relative ${props.className || ''}`} style={{ overflow: 'hidden' }}>
+    <div className="relative" style={{ height: props.fill ? '100%' : 'auto', width: '100%', position: 'relative' }}>
       <Image
         {...props}
         src={imgSrc}
         alt={alt}
         placeholder="blur"
         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyxtOpPeWOjNzWMeNvjuNeMx7MTYBhJRNNDK5pVkBxkYAE6EyHNmGCVzGCPZS8c4/PPHnLRxO/dLYUXVXaDRKJ+vIGqBNeCTXPVUEJRJR"
-        className={`transition-all duration-500 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} ${props.className || ''}`}
+        className={`transition-all duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         onLoadingComplete={() => {
           setIsLoaded(true);
           setHasError(false);
@@ -38,7 +38,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
             }
           }, 2000);
         }}
-        loading="eager"
+        style={{ objectFit: 'cover' }}
         sizes={props.sizes || "(max-width: 768px) 100vw, 50vw"}
         priority
         quality={85}

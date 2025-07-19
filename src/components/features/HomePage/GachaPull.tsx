@@ -81,7 +81,7 @@ export const GachaPull: React.FC = () => {
                             alt={animation.result.idol.name}
                             width={300}
                             height={300}
-                            className="rounded-lg border-2 border-retro-brown shadow-lg h-full w-full object-cover"
+                            className="rounded-lg border-4 border-retro-brown shadow-lg h-full w-full object-cover"
                             sizes="(max-width: 768px) 100vw, 300px"
                           />
                         </div>
