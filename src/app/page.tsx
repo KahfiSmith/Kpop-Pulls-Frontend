@@ -33,7 +33,6 @@ export default function Home() {
       </header>
       
       <main className="flex flex-col items-center py-8">
-        {/* Gacha Pull Section */}
         <section className="w-full">
           <ClientOnlyGachaPull />
         </section>

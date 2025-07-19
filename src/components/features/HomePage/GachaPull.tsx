@@ -86,14 +86,6 @@ export const GachaPull: React.FC = () => {
                             className="rounded-lg border-2 border-retro-brown shadow-lg h-full w-full object-cover"
                             sizes="(max-width: 768px) 100vw, 300px"
                           />
-                          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-2 rounded-b-lg">
-                            <p className="text-white text-center font-bold">
-                              {animation.result.idol.name}
-                            </p>
-                            <p className="text-white text-center text-sm">
-                              {animation.result.idol.group}
-                            </p>
-                          </div>
                         </div>
                       )}
                     </div>

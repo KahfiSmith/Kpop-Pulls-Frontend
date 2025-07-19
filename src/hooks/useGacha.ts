@@ -197,13 +197,8 @@ export function useGacha() {
       setTimeout(() => {
         setAnimation(prev => ({ ...prev, step: 'complete' }));
         
-        setTimeout(() => {
-          setAnimation({
-            isPlaying: false,
-            result: null,
-            step: 'initial'
-          });
-        }, 2000);
+        // Remove the automatic transition to initial state
+        // The user must click "Continue" to go back to initial state
       }, 1500);
     }, 1500);
     
@@ -221,11 +216,12 @@ export function useGacha() {
   ]);
 
   const skipAnimation = useCallback(() => {
-    setAnimation(prev => ({
-      ...prev,
-      step: 'complete',
-      isPlaying: false
-    }));
+    // When user clicks Continue, we should immediately go to the initial state
+    setAnimation({
+      isPlaying: false,
+      result: null,
+      step: 'initial'
+    });
   }, []);
 
   const exportCollection = useCallback(() => {
