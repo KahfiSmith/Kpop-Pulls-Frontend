@@ -8,11 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "db:push": "prisma db push",
-    "db:studio": "prisma studio",
-    "db:seed": "tsx src/lib/db/seed.ts"
+    "cypress:open": "cypress open --e2e",
+    "cypress:run": "cypress run --e2e",
+    "cypress:run:headless": "cypress run --e2e --headless",
+    "test:e2e": "cypress run --e2e",
+    "test:e2e:dev": "cypress open --e2e"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",
@@ -22,7 +22,7 @@
     "@radix-ui/react-toast": "^1.2.14",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.19.2",  
+    "framer-motion": "^12.19.2",
     "lucide-react": "^0.523.0",
     "next": "15.3.4",
     "react": "^19.0.0",
@@ -37,6 +37,7 @@
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.35.0",
     "@typescript-eslint/parser": "^8.35.0",
+    "cypress": "^14.5.4",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
     "tailwindcss": "^4",
