@@ -149,7 +149,7 @@ export default function CollectionPage() {
         <p className="text-retro-navy">Manage and showcase your idol cards</p>
         <div className="mt-4">
           <Link href="/">
-            <Button className="bg-retro-navy hover:bg-retro-teal text-white font-medium py-1.5 px-3 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(0,128,128,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(0,128,128,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm">
+            <Button data-cy="back-to-home-button" className="bg-retro-navy hover:bg-retro-teal text-white font-medium py-1.5 px-3 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(0,128,128,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(0,128,128,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm">
               ← Back to Home
             </Button>
           </Link>
@@ -168,13 +168,14 @@ export default function CollectionPage() {
             
             <div className="flex flex-wrap gap-2">
               <Button 
+                data-cy="export-collection-button"
                 onClick={exportCollection}
                 className="bg-retro-yellow hover:bg-retro-orange text-retro-brown font-medium py-1.5 px-3 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(71,42,14,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(71,42,14,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm"
               >
                 Export Collection
               </Button>
               
-              <Label htmlFor="import-collection" className="bg-retro-teal hover:bg-retro-navy text-white font-medium py-1.5 px-3 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(71,42,14,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(71,42,14,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm cursor-pointer">
+              <Label htmlFor="import-collection" data-cy="import-collection-button" className="bg-retro-teal hover:bg-retro-navy text-white font-medium py-1.5 px-3 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(71,42,14,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(71,42,14,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm cursor-pointer">
                 Import Collection
                 <input 
                   id="import-collection"
@@ -186,6 +187,7 @@ export default function CollectionPage() {
               </Label>
               
               <Button 
+                data-cy="share-collection-button"
                 onClick={handleShare}
                 className="bg-retro-sage hover:bg-retro-teal text-retro-brown font-medium py-1.5 px-3 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(71,42,14,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(71,42,14,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm"
               >
@@ -193,6 +195,7 @@ export default function CollectionPage() {
               </Button>
               
               <Button 
+                data-cy="clear-collection-button"
                 onClick={handleClearCollection}
                 className="bg-retro-coral hover:bg-retro-burgundy text-white font-medium py-1.5 px-3 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(71,42,14,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(71,42,14,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm"
               >
@@ -226,6 +229,7 @@ export default function CollectionPage() {
                   Rarity
                 </Label>
                 <Select 
+                  data-cy="rarity-filter-select"
                   value={filters.rarity} 
                   onValueChange={(value) => setFilters(prev => ({ ...prev, rarity: value as RarityType | 'all' }))}
                 >
@@ -248,6 +252,7 @@ export default function CollectionPage() {
                   Group
                 </Label>
                 <Select 
+                  data-cy="group-filter-select"
                   value={filters.group} 
                   onValueChange={(value) => setFilters(prev => ({ ...prev, group: value }))}
                 >
@@ -270,6 +275,7 @@ export default function CollectionPage() {
                   Search
                 </Label>
                 <input
+                  data-cy="search-input"
                   id="search-filter"
                   type="text"
                   value={filters.search}
@@ -286,6 +292,7 @@ export default function CollectionPage() {
               </Label>
               <div className="flex gap-2">
                 <Select 
+                  data-cy="sort-field-select"
                   value={sortOption.field} 
                   onValueChange={(value) => setSortOption(prev => ({ ...prev, field: value as CollectionSortOptions['field'] }))}
                 >
@@ -301,6 +308,7 @@ export default function CollectionPage() {
                 </Select>
                 
                 <Button
+                  data-cy="sort-direction-button"
                   onClick={() => setSortOption(prev => ({ 
                     ...prev, 
                     direction: prev.direction === 'asc' ? 'desc' : 'asc' 
@@ -322,9 +330,9 @@ export default function CollectionPage() {
           </h2>
           
           {filteredAndSortedItems.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10" data-cy="collection-grid">
               {filteredAndSortedItems.map((item) => (
-                <div key={item.idol.id} className="relative">
+                <div key={item.idol.id} className="relative" data-cy={`collection-item-${item.idol.id}`}>
                   <div className="absolute -top-2 -right-2 bg-retro-brown text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold z-10">
                     {item.count}
                   </div>
@@ -343,7 +351,7 @@ export default function CollectionPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
+            <div className="text-center py-12" data-cy="empty-collection">
               <p className="text-retro-navy text-lg">
                 No cards match your filters or your collection is empty.
               </p>
