@@ -113,6 +113,7 @@ export const GachaPull: React.FC = () => {
                         {rarities[animation.result.idol.rarity].name} card!
                       </p>
                       <Button
+                        data-cy="continue-button"
                         onClick={() => skipAnimation()}
                         className="bg-retro-yellow hover:bg-retro-orange text-retro-brown font-medium py-2 px-6 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(71,42,14,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(71,42,14,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px]"
                       >
@@ -137,6 +138,7 @@ export const GachaPull: React.FC = () => {
                 Pull an idol card!
               </p>
               <Button
+                data-cy="gacha-pull-button"
                 onClick={handlePull}
                 className="bg-retro-yellow hover:bg-retro-orange text-retro-brown font-medium py-2 px-6 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(71,42,14,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(71,42,14,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-lg"
               >
@@ -150,6 +152,7 @@ export const GachaPull: React.FC = () => {
           <div className="mb-4 md:mb-0">
             <div className="flex items-center space-x-2">
               <Button
+                data-cy="toggle-mute-button"
                 onClick={toggleMute}
                 className="bg-retro-sage hover:bg-retro-teal text-retro-brown font-medium py-1 px-2 rounded-md border-2 border-retro-brown transition-all duration-200"
               >
@@ -157,6 +160,7 @@ export const GachaPull: React.FC = () => {
               </Button>
 
               <Button
+                data-cy="toggle-stats-button"
                 onClick={() => setShowStats(!showStats)}
                 className="bg-retro-mint hover:bg-retro-teal text-retro-brown font-medium py-1 px-2 rounded-md border-2 border-retro-brown transition-all duration-200"
               >
@@ -189,7 +193,7 @@ export const GachaPull: React.FC = () => {
         </div>
 
         {showStats && (
-          <div className="mt-6 p-4 bg-retro-sage border-2 border-retro-brown rounded-lg">
+          <div className="mt-6 p-4 bg-retro-sage border-2 border-retro-brown rounded-lg" data-cy="stats-panel">
             <h3 className="text-lg font-bold text-retro-brown mb-2">
               Pull Statistics
             </h3>
@@ -296,7 +300,7 @@ export const GachaPull: React.FC = () => {
                 <h4 className="text-md font-bold text-retro-brown mb-2">
                   Recent Pulls
                 </h4>
-                <div className="rounded-md border-2 border-retro-brown overflow-hidden shadow-sm">
+                <div className="rounded-md border-2 border-retro-brown overflow-hidden shadow-sm" data-cy="recent-pulls-table">
                   <div className="max-h-36 overflow-y-auto">
                     <Table>
                       <TableHeader>

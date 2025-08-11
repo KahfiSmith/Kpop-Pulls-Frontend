@@ -29,7 +29,7 @@ export const IdolCard: React.FC<IdolCardProps> = ({
         };
 
   return (
-    <div className="relative w-72">
+    <div className="relative w-72" data-cy="idol-card">
       <div className="absolute -bottom-2 -right-2 w-full h-full bg-retro-yellow border-3 border-retro-brown rounded-lg"></div>
       <div className="relative bg-retro-cream border-3 border-retro-brown rounded-lg overflow-hidden">
       <div
@@ -103,6 +103,7 @@ export const IdolCard: React.FC<IdolCardProps> = ({
 
           {onViewProfile && (
             <Button
+              data-cy="view-profile-button"
               onClick={onViewProfile}
               className="mt-3 w-full bg-retro-yellow hover:bg-retro-orange text-retro-brown font-medium py-1.5 px-3 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(71,42,14,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(71,42,14,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm"
             >

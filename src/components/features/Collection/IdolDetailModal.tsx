@@ -41,6 +41,7 @@ export const IdolDetailModal: React.FC<IdolDetailModalProps> = ({ idol, onClose,
 
   return (
     <div 
+      data-cy="idol-detail-modal"
       className="fixed inset-0 bg-retro-cream bg-opacity-50 flex items-center justify-center z-50 p-4"
       onClick={handleBackdropClick}
     >
@@ -115,6 +116,7 @@ export const IdolDetailModal: React.FC<IdolDetailModalProps> = ({ idol, onClose,
 
         <div className="p-6 border-t-2 border-retro-brown bg-retro-cream flex justify-end">
           <Button
+            data-cy="close-modal-button"
             onClick={onClose}
             className="bg-retro-yellow hover:bg-retro-orange text-retro-brown font-medium py-1.5 px-4 rounded-md border-2 border-retro-brown transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(71,42,14,0.8)] hover:shadow-[1px_1px_0px_0px_rgba(71,42,14,0.8)] hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-sm"
           >
