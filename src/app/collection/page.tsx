@@ -364,7 +364,7 @@ export default function CollectionPage() {
       </main>
       
       <footer className="py-6 text-center text-retro-brown">
-        <p>© 2024 KPop Pulls Collection</p>
+        <p>© 2025 KPop Pulls Collection</p>
       </footer>
       
       <IdolDetailModal
