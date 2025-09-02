@@ -277,12 +277,9 @@ function SharedCollectionContent() {
               </h2>
 
               {filteredItems.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(18rem,1fr))] gap-4 sm:gap-6 md:gap-8">
                   {filteredItems.map((item) => (
                     <div key={item.idol.id} className="relative">
-                      <div className="absolute -top-2 -right-2 bg-retro-brown text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold z-10">
-                        {item.count}
-                      </div>
                       <IdolCard
                         name={item.idol.name}
                         group={item.idol.group}
@@ -292,6 +289,7 @@ function SharedCollectionContent() {
                         quote={item.idol.quote}
                         imageSrc={item.idol.image}
                         rarity={item.idol.rarity}
+                        countBadge={item.count}
                         onViewProfile={() => openIdolDetails(item.idol)}
                       />
                     </div>

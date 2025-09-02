@@ -14,6 +14,7 @@ export const IdolCard: React.FC<IdolCardProps> = ({
   imageSrc,
   rarity,
   onViewProfile,
+  countBadge,
 }) => {
   const rarityStyles =
     rarity && rarities[rarity as RarityType]
@@ -29,7 +30,7 @@ export const IdolCard: React.FC<IdolCardProps> = ({
         };
 
   return (
-    <div className="relative w-72" data-cy="idol-card">
+    <div className="relative w-full" data-cy="idol-card">
       <div className="absolute -bottom-2 -right-2 w-full h-full bg-retro-yellow border-3 border-retro-brown rounded-lg"></div>
       <div className="relative bg-retro-cream border-3 border-retro-brown rounded-lg overflow-hidden">
       <div
@@ -112,6 +113,11 @@ export const IdolCard: React.FC<IdolCardProps> = ({
           )}
         </div>
       </div>
+      {typeof countBadge !== 'undefined' && (
+        <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-[40%] bg-retro-brown text-white rounded-full w-6 h-6 flex items-center justify-center text-[10px] font-bold z-30 ring-2 ring-retro-cream pointer-events-none">
+          {countBadge}
+        </div>
+      )}
     </div>
   );
 };

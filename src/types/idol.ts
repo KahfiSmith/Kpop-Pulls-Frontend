@@ -11,6 +11,7 @@ export interface IdolCardProps {
   imageSrc: string;
   rarity?: RarityType;
   onViewProfile?: () => void;
+  countBadge?: number; // optional count badge displayed on top-right corner
 }
 
 export interface IdolDetailProps {
