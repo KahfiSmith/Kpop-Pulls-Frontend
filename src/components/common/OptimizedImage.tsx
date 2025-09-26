@@ -1,20 +1,51 @@
 import Image, { ImageProps } from 'next/image';
-import { useState } from 'react';
+import { CSSProperties, useState } from 'react';
 
 interface OptimizedImageProps extends Omit<ImageProps, 'onLoadingComplete' | 'onError'> {
   fallbackSrc?: string;
+  objectFit?: CSSProperties['objectFit'];
+  natural?: boolean;
 }
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   alt,
   fallbackSrc = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFdwI2QOQviwAAAABJRU5ErkJggg==",
+  objectFit = 'cover',
+  natural = false,
   ...props
 }) => {
   const [imgSrc, setImgSrc] = useState(src);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   
+  if (natural) {
+    return (
+      <div className="relative w-full" style={{ position: 'relative' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={typeof imgSrc === 'string' ? imgSrc : ''}
+          alt={alt}
+          onLoad={() => {
+            setIsLoaded(true);
+            setHasError(false);
+          }}
+          onError={() => {
+            setHasError(true);
+            setImgSrc(fallbackSrc);
+            setTimeout(() => {
+              if (typeof src === 'string' && src !== fallbackSrc) {
+                setImgSrc(src);
+              }
+            }, 2000);
+          }}
+          className={`transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="relative" style={{ height: props.fill ? '100%' : 'auto', width: '100%', position: 'relative' }}>
       <Image
@@ -38,7 +69,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
             }
           }, 2000);
         }}
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit }}
         sizes={props.sizes || "(max-width: 768px) 100vw, 50vw"}
         priority
         quality={85}

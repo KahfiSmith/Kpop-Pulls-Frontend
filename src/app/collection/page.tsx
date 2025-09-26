@@ -330,9 +330,13 @@ export default function CollectionPage() {
           </h2>
           
           {filteredAndSortedItems.length > 0 ? (
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(18rem,1fr))] gap-4 sm:gap-6 md:gap-8" data-cy="collection-grid">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8" data-cy="collection-grid">
               {filteredAndSortedItems.map((item) => (
-                <div key={item.idol.id} className="relative" data-cy={`collection-item-${item.idol.id}`}>
+                <div
+                  key={item.idol.id}
+                  className="relative w-full max-w-[18rem] sm:max-w-none mx-auto sm:mx-0"
+                  data-cy={`collection-item-${item.idol.id}`}
+                >
                   <IdolCard
                     name={item.idol.name}
                     group={item.idol.group}

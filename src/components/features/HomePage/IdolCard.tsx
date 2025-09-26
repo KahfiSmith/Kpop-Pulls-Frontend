@@ -4,7 +4,11 @@ import { rarities, RarityType } from "@/data/rarities";
 import { IdolCardProps } from "@/types";
 import React from "react";
 
-export const IdolCard: React.FC<IdolCardProps> = ({
+type ExtendedIdolCardProps = IdolCardProps & {
+  imageFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
+};
+
+export const IdolCard: React.FC<ExtendedIdolCardProps> = ({
   name,
   group,
   birthdate,
@@ -15,6 +19,7 @@ export const IdolCard: React.FC<IdolCardProps> = ({
   rarity,
   onViewProfile,
   countBadge,
+  imageFit = 'cover',
 }) => {
   const rarityStyles =
     rarity && rarities[rarity as RarityType]
@@ -54,6 +59,7 @@ export const IdolCard: React.FC<IdolCardProps> = ({
                 alt={`${name} from ${group}`}
                 fill
                 sizes="(max-width: 768px) 100vw, 288px"
+                objectFit={imageFit}
               />
             </div>
           ) : (
