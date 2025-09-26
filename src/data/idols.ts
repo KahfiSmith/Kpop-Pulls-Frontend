@@ -540,7 +540,7 @@ export const idols: Idol[] = [
     position: "Visual",
     quote: "Firecracker heart!",
     rarity: "rare",
-    image: "/images/yuna.jpeg",
+    image: "/images/ana.jpeg",
   },
   {
     id: "hearts2hearts-ian",
